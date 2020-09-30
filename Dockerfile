@@ -74,7 +74,7 @@ RUN yum install -y atlas-devel \
 
 # Install protobuf, clif
 RUN cd ~ \
-    && git clone https://github.com/pykaldi/pykaldi.git \
+    && git clone https://github.com/mxmpl/pykaldi.git \
     && cd pykaldi/tools \
     && ./install_protobuf.sh \
     && ./install_clif.sh
@@ -115,7 +115,7 @@ RUN yum install -y \
 ARG CACHEBUST=1
 
 RUN cd ~ \
-    && git clone https://github.com/pykaldi/conda-package.git
+    && git clone https://github.com/mxmpl/conda-package.git
 
 
 WORKDIR "/root/conda-package"
