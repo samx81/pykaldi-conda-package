@@ -32,6 +32,7 @@ RUN yum install -y atlas-devel \
     vim \
     wget \
     zlib-devel \
+    && conda install -c anaconda python=3.7 \
     && conda install conda-build anaconda-client ninja setuptools pip pyparsing numpy cmake git
 
 # Install gcc 5.4.0
