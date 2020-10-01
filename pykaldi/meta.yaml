@@ -10,7 +10,6 @@ source:
   git_url: https://github.com/mxmpl/pykaldi.git
   patches:
     - CMakeLists.patch # use new locations of the libs for kaldi and openfst
-    - install_kaldi.patch # link against openblas
     - setup.patch #force cmake to find python lib
 build:
   number: {{ number }} 
