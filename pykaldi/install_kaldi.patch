@@ -5,7 +5,7 @@
  
  cd ../src
 -./configure --shared
-+./configure --shared --mathlib=OPENBLAS --openblas-root=${PREFIX} --use-cuda=no
++./configure --shared --mathlib=OPENBLAS --openblas-root=${PREFIX}
  make clean -j && make depend -j && make -j4
  
  echo "Done installing Kaldi."
