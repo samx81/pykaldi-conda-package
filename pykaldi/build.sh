@@ -10,9 +10,9 @@ export CLIF_MATCHER="/root/pykaldi/tools/clif_backend/build_matcher/bin/clif-mat
 LIB_FOLDER="$SP_DIR/kaldi/lib"
 mkdir -p $LIB_FOLDER
 
- #####################################
- # Copy cuda
- #####################################
+#####################################
+# Copy cuda
+#####################################
 DEPS_LIST=(
 	"/usr/local/cuda/lib64/libcublas.so*"
 	"/usr/local/cuda/lib64/libcudart.so*"

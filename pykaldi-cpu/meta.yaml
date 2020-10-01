@@ -1,7 +1,6 @@
 {% set name = "shennong-pykaldi" %}
 {% set version = "0.1.4" %}
 {% set number = 1 %}
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -24,14 +23,14 @@ requirements:
     - ninja
     - setuptools
   host:
-    - openblas 0.3.*
+    - openblas 0.3.3
     - python {{ python }}
     - pytest-runner
     - numpy 1.15.*
     - enum34 #[py<34]
     - zlib
   run:
-    - openblas >=0.3.*
+    - openblas 0.3.3
     - python {{ python }}
     - numpy >=1.15 
     - enum34 #[py<34]
