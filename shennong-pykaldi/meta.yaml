@@ -1,5 +1,5 @@
 {% set name = "shennong-pykaldi" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.3" %}
 {% set hash="0570307138c5391cc47b019450d08bcb9686dd98" %}
 {% set number = 1 %}
 package:
@@ -42,7 +42,7 @@ about:
   license: Apache-2.0
   summary: 'Python wrapper for Kaldi ASR'
   description: |
-    PyKaldi is a Python wrapper for Kaldi. It aims to bridge the gap between Kaldi and all the nice things Python has to offer
+    This package is a dependency of shennong. PyKaldi is a Python wrapper for Kaldi. It aims to bridge the gap between Kaldi and all the nice things Python has to offer.
 extra:
   recipe-maintainers:
     - vrmpx
