@@ -35,44 +35,6 @@ RUN yum install -y atlas-devel \
     && conda install -c anaconda python=3.7 \
     && conda install conda-build anaconda-client ninja setuptools pip pyparsing numpy cmake git
 
-# Install gcc 5.4.0
-# RUN cd ~ \
-#     && curl https://ftp.gnu.org/gnu/gcc/gcc-5.4.0/gcc-5.4.0.tar.bz2 -O \
-#     && tar xvfj gcc-5.4.0.tar.bz2 \
-#     && mkdir gcc-5.4.0-build \
-#     && cd gcc-5.4.0-build \
-#     && ../gcc-5.4.0/configure --enable-languages=c,c++ --disable-multilib \
-#     && make -j12 \
-#     && make install \
-#     && rm -rf ~/gcc-5.4.0.tar.bz2 \
-#     && rm -rf ~/gcc-5.4.0-build \
-#     && rm -rf ~/gcc-5.4.0
-
-# ENV LD_LIBRARY_PATH="/usr/local/lib64:${LD_LIBRARY_PATH}"
-# ENV PATH="/usr/local/bin:${PATH}"
-
-# Install cmake3
-#RUN cd ~ \
-#    && wget https://cmake.org/files/v3.6/cmake-3.6.2.tar.gz \
-#    && tar -zxvf cmake-3.6.2.tar.gz \
-#    && cd cmake-3.6.2 \
-#    && ./bootstrap --prefix=/usr/local \
-#    && make \
-#    && make install \
-#    && rm -rf ~/cmake-3.6.2.tar.gz \
-#    && rm -rf ~/cmake-3.6.2
-
-# Install git
-#RUN cd ~ \
-#    && wget http://github.com/git/git/archive/v2.8.0.tar.gz \
-#    && tar -zxvf v2.8.0.tar.gz \
-#    && cd git-2.8.0 \
-#    && make configure \
-#    && ./configure --prefix=/usr/local \
-#    && make install \
-#    && rm -rf ~/v2.8.0.tar.gz \
-#    && rm -rf ~/git-2.8.0
-
 # Install protobuf, clif
 RUN cd ~ \
     && git clone https://github.com/mxmpl/pykaldi.git \
