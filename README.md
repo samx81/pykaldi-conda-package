@@ -9,15 +9,9 @@ docker build --tag condapkg_centos7 --build-arg CACHEBUST=$(date +%s) .
 The build arg is used to force docker to download a new copy of this repo everytime we build the image. 
 
 # Building the conda package
-The entrypoint for this docker image is `anaconda_upload.sh`. This script takes as an argument the name of the folder we want to build for and upload to anaconda. For pykaldi:
-
+The entrypoint for this docker image is `anaconda_upload.sh`. This script takes as an argument the name of the folder we want to build for and upload to anaconda.
 ```
-docker run -it --rm -e CONDA_UPLOAD_TOKEN='<TOKEN>' condapkg_centos7 pykaldi
-```
-
-And for pykaldi-cpu
-```
-docker run -it --rm -e CONDA_UPLOAD_TOKEN='<TOKEN>' condapkg_centos7 pykaldi-cpu
+docker run -it --rm -e CONDA_UPLOAD_TOKEN='<TOKEN>' condapkg_centos7 shennong-pykaldi
 ```
 
 Token is the token obtained from anaconda.org
