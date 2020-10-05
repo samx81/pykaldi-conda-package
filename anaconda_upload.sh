@@ -1,6 +1,6 @@
 #!/bin/bash
 PKG_NAME=shennong-pykaldi
-USER=coml
+USER=mxmpl
 CHANNEL=coml
 BLD_PATH=/usr/local/conda-bld/linux-64/
 
