@@ -80,8 +80,6 @@ ARG CACHEBUST=1
 RUN cd ~ \
     && git clone https://github.com/mxmpl/conda-package.git
 
-RUN cd /root/conda-package && BLD_PATH=/usr/local/conda-bld/linux-64/ && conda build shennong-pykaldi
-
 WORKDIR "/root/conda-package"
 ENTRYPOINT ["bash", "anaconda_upload.sh"]
 CMD ["pykaldi"]
