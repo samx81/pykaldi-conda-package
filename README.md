@@ -11,7 +11,7 @@ The build arg is used to force docker to download a new copy of this repo everyt
 # Building the conda package
 The entrypoint for this docker image is `anaconda_upload.sh`. This script takes as an argument the name of the folder we want to build for and upload to anaconda.
 ```
-docker run -it --rm -e CONDA_UPLOAD_TOKEN='<TOKEN>' condapkg_centos7 shennong-pykaldi
+docker run -it --rm -e CONDA_UPLOAD_TOKEN='<TOKEN>' --storage-opt size=50G condapkg_centos7 shennong-pykaldi
 ```
 
 Token is the token obtained from anaconda.org
