@@ -28,7 +28,7 @@ requirements:
     - openblas 0.3.3
     - python {{ python }}
     - pytest-runner
-    - numpy 1.15.*
+    - numpy
     - enum34 #[py<34]
     - zlib
   run:
