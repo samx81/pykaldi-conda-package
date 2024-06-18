@@ -1,20 +1,17 @@
-{% set name = "shennong-pykaldi" %}
-{% set version = "0.1.3" %}
-{% set hash="0570307138c5391cc47b019450d08bcb9686dd98" %}
+{% set name = "pykaldi" %}
+{% set version = "0.2.2-git" %}
 {% set number = 1 %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/mxmpl/pykaldi.git
-  git_rev: {{ hash }}
+  git_url: https://github.com/pykaldi/pykaldi.git
   patches:
     - CMakeLists.patch # use new locations of the libs for kaldi and openfst
     - install_kaldi.patch # link against openblas
-    - setup.patch #force cmake to find python lib
 build:
-  number: {{ number }} 
+  number: {{ number }}
   skip: True #[win]
 
 requirements:
@@ -25,24 +22,31 @@ requirements:
     - ninja
     - setuptools
   host:
-    - openblas 0.3.3
+    - mkl
+    - mkl-devel
+    - mkl-include
+    - mkl-static
     - python {{ python }}
     - pytest-runner
     - numpy
     - enum34 #[py<34]
     - zlib
   run:
-    - openblas 0.3.3
+    - mkl
+    - mkl-static
+    - mkl-include
     - python {{ python }}
-    - numpy >=1.15 
+    - numpy >=1.15
     - enum34 #[py<34]
 
 about:
-  home: https://github.com/mxmpl/pykaldi.git
+  home: https://github.com/pykaldi/pykaldi.git
   license: Apache-2.0
   summary: 'Python wrapper for Kaldi ASR'
   description: |
-    This package is a dependency of shennong. PyKaldi is a Python wrapper for Kaldi. It aims to bridge the gap between Kaldi and all the nice things Python has to offer.
+    PyKaldi is a Python wrapper for Kaldi. It aims to bridge the gap between Kaldi and all the nice things Python has to offer.
 extra:
   recipe-maintainers:
-    - vrmpx
+    - mmmaat
+    - samx81
+

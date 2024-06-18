@@ -4,6 +4,7 @@ export LDFLAGS="-L$PREFIX/lib"
 export CPATH=${PREFIX}/include
 export PYCLIF="/usr/local/bin/pyclif"
 export CLIF_MATCHER="/root/pykaldi/tools/clif_backend/build_matcher/bin/clif-matcher"
+export MKL_ROOT="${PREFIX}/"
 
 # Create lib folder
 LIB_FOLDER="$SP_DIR/kaldi/lib"
@@ -43,3 +44,4 @@ export DEBUG=0
 ##########################################################################
 cd "$SRC_DIR"
 $PYTHON setup.py install
+
