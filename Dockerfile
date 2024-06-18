@@ -19,8 +19,6 @@ RUN yum install -y atlas-devel \
     libtool \
     make \
     mpfr-devel \
-    #    openssl \
-    #    openssl-devel \
     ncurses-devel \
     patch \
     perl-CPAN \
@@ -32,12 +30,12 @@ RUN yum install -y atlas-devel \
     vim \
     wget \
     zlib-devel \
-    && conda install -c anaconda python=3.7 \
+    && conda install -c anaconda python=3.10 \
     && conda install conda-build anaconda-client ninja setuptools pip pyparsing numpy cmake git
 
 # Install protobuf, clif
 RUN cd ~ \
-    && git clone https://github.com/mxmpl/pykaldi.git \
+    && git clone https://github.com/pykaldi/pykaldi.git \
     && cd pykaldi/tools \
     && ./install_protobuf.sh \
     && ./install_clif.sh
@@ -78,8 +76,8 @@ RUN cd ~ \
 ARG CACHEBUST=1
 
 RUN cd ~ \
-    && git clone https://github.com/mxmpl/conda-package.git
+    && git clone https://github.com/samx81/pykaldi-conda-package.git
 
 WORKDIR "/root/conda-package"
-ENTRYPOINT ["bash", "anaconda_upload.sh"]
+ENTRYPOINT ["bash", "conda_build.sh"]
 CMD ["pykaldi"]
